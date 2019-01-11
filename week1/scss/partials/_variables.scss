@@ -1,0 +1,21 @@
+$white: white;
+$shadow: #e2e2e2 ;
+$border: #b7b7b7;
+$text: #1c1c1c;
+$primary: #d01600;
+$dark-primary: darken($primary,5%);
+$db-dark-primary: darken($primary,20%);
+
+@mixin align_row {
+  display: flex;
+  flex-direction: row
+}
+@mixin align_col {
+  display: flex;
+  flex-direction: column;
+}
+@mixin size($w,$h) {
+  $w: width;
+  $h: height
+}
+

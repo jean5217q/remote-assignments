@@ -1,0 +1,433 @@
+body {
+  font-family: '微軟正黑體';
+}
+//導覽列共同
+nav { 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  background-color: $white;
+  .header-logo {
+    margin-right: auto;
+  }
+}
+.header-logo {
+  cursor: pointer;
+}
+//小螢幕漢堡導覽列範圍
+@media screen and (max-width: 799px) {
+  .lg-navbar {
+    display: none;
+  }
+  // 小螢幕導覽列標籤
+  .sm-navbar { 
+    padding: 0 1.4rem;
+    height: 80px;
+  }
+  .menu-btn {
+    .menu-icon {
+      width: 24px;
+      height: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      span {
+        width: 100%;
+        height: 3px;
+        background-color: $text;
+      }
+    }
+  }
+  // 小螢幕導覽列開啟
+  // .active {
+  //   &:nth-child(1) {
+  //     transform: translateY(9px) rotate(45deg)
+  //   }
+  //   &:nth-child(2) {
+  //     visibility: hidden;
+  //   }
+  //   &:nth-child(3) {
+  //     transform: translateY(-9px) rotate(-45deg)
+  //   }
+  // }
+  }
+  .main-container {
+    margin-top: 80px;
+  }
+// 大螢幕導覽列
+@media screen and (min-width: 800px) {
+  .lg-navbar {
+    height: 100px;
+    .header-logo {
+      transform: translateY(2px);
+      img {
+        height: 50px;
+      }
+    }
+    ul {
+      display: flex;
+    }
+    .nav-item {  
+      position: relative;
+      font-size: 0.95rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: $text;
+      transition: 0.2s ease-in;
+      &::after {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: $primary;
+        bottom: -0.625rem;
+        transition: 0.2s ease-in
+      }
+      &:hover {
+        color: $primary;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+  // 裝導覽列以下所有容器
+  .main-container {
+    margin-top: 100px;
+  }
+}
+
+
+
+// 首頁大圖
+.top-hero {
+  position: relative;
+  margin-bottom: 7.5rem;
+  .top-hero-image {
+    //height自訂
+    background-image: url('../img/hero.jpg');
+    background-color: $primary;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+.hero-image-title {
+  position: absolute;
+  top: 50%;
+  left: 10vw;
+  transform: translateY(-50%);
+  font-family: 'Maven Pro', sans-serif;  
+  color: $white;
+  .sub {
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    span {
+      padding-right: 0.8em;
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+  .head {
+    font-size: 2.8em;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 0.2em;
+    transform: translateX(-0.05em);
+    position: relative;
+  }
+  .desc {
+    display: flex;
+    align-items: center;
+    .line {
+      flex: 1;
+      width: 60%;
+      height: 2px;
+      background-color: $white;
+      margin-right: 0.3em;
+    }
+    .text {
+      font-size: 0.45em;
+      font-weight: normal;
+      letter-spacing: 1px;
+      span {
+        padding-right: 0.3em;
+      }
+    }
+  }
+}
+
+// 總section外層容器
+.section-container {
+  padding: 0 16px;
+  display: flex;
+  justify-content: center;
+}
+// 總section內層容器
+.section-inner {
+  width: 100%;
+  max-width: 1200px;
+  @include align_col;
+}
+// 每個section區塊
+.section-block {
+  padding-bottom: 6rem;
+}
+// section大標
+.section-title {
+  font-size: 2rem;
+  padding-bottom: 2.5rem;
+  text-align: center;
+  span {
+    padding: 0.2rem;
+  }
+}
+// section圖片
+.section-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 2rem;
+  .section-item {
+    cursor: pointer;
+    border: 1px solid $border;
+    position: relative;
+    //height 動畫自訂
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    &:nth-child(1) {
+      background-image: url(../img/01.jpg);
+    }
+    &:nth-child(2) {
+      background-image: url(../img/02.jpg);
+    }
+    &:nth-child(3) {
+      background-image: url(../img/03.jpg);
+    }
+    &:nth-child(4) {
+      background-image: url(../img/04.jpg);
+    }
+    .img-title {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0,0,0,0.4);
+      span {
+        color: $white;
+      }
+    }
+  }
+}
+// section按鈕
+.section-btn {
+  display: flex;
+  justify-content: center;
+}
+.btn-inner {
+  position: relative;
+  padding: 2rem 4rem;
+  background-color: $primary;
+  z-index: 0;
+  cursor: pointer;
+  transition: 0.15s ease-in;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    content: '';
+    width: 0;
+    height: 100%;
+    background-color: $dark-primary;
+    z-index: -1;
+    transition: 0.1s ease-in
+  }
+  span {
+    font-size: 1rem;
+    padding: 0.2rem;
+    color: $white;
+  }
+}
+//hover 800以上
+@media screen and (min-width: 800px) {
+  //圖片
+  .section-item {
+    transition: box-shadow 0.3s ease-in;
+    &:hover {
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      .img-title {
+        opacity: 1;
+        span {
+          opacity: 1;
+          transform: translateY(0)
+        }
+      }
+    }
+  }
+  // 按鈕切換
+  .btn-inner {
+    &:hover {
+      transform: translate(1px,1px);
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// 個別RWD
+@media screen and (max-width: 499px) {
+  //導覽列高度左右距
+  .header-logo {
+    transform: translateY(3px);
+    img {
+      height: 32px;
+    }
+  }
+  // 首頁banner
+  .top-hero-image {
+    height: 300px;
+  }
+  // 首頁banner大標
+  .hero-image-title {
+    font-size: 24px;
+    .desc {
+      &:before {
+        width: 17%;
+      }
+    }
+  }
+  // section大標
+  .section-title {
+    font-size: 1.75rem;
+  }
+  // section圖片
+  .section-content {
+    .section-item {
+      width: 100%;
+      height: 14rem;
+      margin-bottom: 1.45rem;
+      .img-title {
+        bottom: 0;
+        span {
+          font-size: 15px;
+          letter-spacing: 2px;
+          padding: 16px;
+        }
+      }
+    }
+  } 
+}
+
+@media screen and (min-width: 500px) {
+  //導覽列logo調整
+  .header-logo {
+    transform: translateY(3px);
+    img {
+      height: 40px;
+    }
+  }
+  // 首頁banner
+  .top-hero-image {
+    height: 360px;
+  }
+  // 首頁banner大標
+  .hero-image-title {
+    // left: 8%;
+    font-size: 32px;
+  }
+  // section大標
+  .section-title {
+    font-size: 1.75rem;
+  }
+  // section圖片
+  .section-item {
+    height: 200px;
+    flex: 1 calc(50% - 16px);
+    margin-bottom: 16px;
+    &:nth-child(odd) {
+      margin-right: 16px;
+    }
+    .img-title {
+      bottom: 0;
+      span {
+        font-size: 1rem;
+        letter-spacing: 2px;
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .sm-navbar {
+    display: none;
+  }
+  .lg-navbar {
+    display: flex;
+    padding: 0 2rem;
+    li{
+      margin-left: 3rem;
+    }
+  }
+  // 首頁banner
+  .top-hero-image {
+    height: 440px;
+  }
+  // 首頁banner大標
+  .hero-image-title {
+    font-size: 40px;
+  }
+  // section大標
+  .section-title {
+    font-size: 2rem;
+  }
+  // section圖片
+  .section-item {
+    height: 240px;
+    .img-title {
+      height: 100%;
+      top: 0;
+      transition: 0.3s ease-in;
+      opacity: 0;
+      span {
+        font-size: 20px;
+        letter-spacing: 3px;
+        transform: translate(-3px,50px);
+        transition: 0.3s ease-in;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .lg-navbar {
+    padding: 0 4rem;
+    li{
+      margin-left: 5rem;
+    }
+  }
+  // 首頁banner
+  .top-hero-image {
+    height: 560px;
+  }
+  // 首頁banner大標
+  .hero-image-title {
+    font-size: 48px; 
+  }
+  // section圖片
+  .section-item {
+    height: 280px;
+  }
+}
