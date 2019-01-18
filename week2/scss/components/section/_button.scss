@@ -1,0 +1,45 @@
+.load-btn {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: $primary;
+  transition: 0.1s ease-out; //按鈕漸變時間
+  cursor: pointer;
+  @include before {
+    @include absolute($t: 0,$l: 0,$z:-1);
+    @include size(0,100%);
+    background-color: $dark-primary;
+    transition: 0.1s ease-in; //按鈕hover動畫時間
+  }
+  &.hide-btn {
+    opacity: 0;
+  }
+  span {
+    font-size: 1rem;
+    padding: 0.2rem;
+    color: $white;
+  }
+}
+//按鈕動畫
+@media screen and (min-width: 800px) {
+  .load-btn { 
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// 調整按鈕大小與在版面的位置
+@media screen and (max-width: 499px) {
+  .load-btn {
+    width: 100%;
+    transform: translateY(-4.5rem);
+  } 
+}
+@media screen and (min-width: 500px) {
+  .load-btn {
+    width: 400px;
+    transform: translateY(-5rem);
+  }
+}

@@ -1,0 +1,12 @@
+//導覽列共同
+nav { 
+  @include fixed($t:0,$l:0,$z:1000);
+  width: 100%;
+  @include flexy($ais: center); //logo與導覽列對齊
+  background-color: $white;
+  border-bottom: 1px solid $border;
+  .header-logo {
+    margin-right: auto;
+    cursor: pointer;
+  } 
+}

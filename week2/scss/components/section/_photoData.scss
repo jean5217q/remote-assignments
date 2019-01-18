@@ -1,0 +1,42 @@
+//體驗圖片串接
+@media screen and (max-width: 499px) {
+  $experience : ('01','02','03','04');
+  @each $id in $experience {
+    .experience {
+      &:nth-child(#{$id}) {
+        background-image: url('../img/homepage/experience/sm/#{$id}.jpg');
+      }
+    }
+  }
+}
+@media screen and (min-width: 500px) {
+  $experience : ('01','02','03','04');
+  @each $id in $experience {
+    .experience {
+      &:nth-child(#{$id}) {
+        background-image: url('../img/homepage/experience/lg/#{$id}.jpg');
+      }
+    }
+  }
+}
+//季節圖片串接
+@media screen and (max-width: 499px) {
+  $season : ('01','02','03','04');
+  @each $id in $season {
+    .season {
+      &:nth-child(#{$id}) {
+        background-image: url('../img/homepage/season/sm/#{$id}.jpg');
+      }
+    }
+  }
+}
+@media screen and (min-width: 500px) {
+  $season : ('01','02','03','04');
+  @each $id in $season {
+    .season {
+      &:nth-child(#{$id}) {
+        background-image: url('../img/homepage/season/lg/#{$id}.jpg');
+      }
+    }
+  }
+}

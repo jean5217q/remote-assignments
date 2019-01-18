@@ -1,0 +1,58 @@
+//隱藏小導覽列調整banner與導覽列間距
+@media screen and (min-width: 800px) {
+  .sm-navbar {
+    display: none;
+  }
+  .main-container {
+    margin-top: 100px;
+  }
+}
+//大導覽列
+.lg-navbar {
+  height: 100px;
+  .header-logo {
+    transform: translateY(2px);
+    img {
+      height: 50px;
+    }
+  }
+  ul {
+    display: flex;
+  }
+  .nav-item {  
+    @include font($size: 0.95rem,$weight: 500,$space: 1px,$color: $text);
+    transition: 0.2s ease-in;
+    @include after{
+      @include absolute($b: -0.625rem);
+      @include size(0,2px);
+      background-color: $primary;
+      transition: 0.2s ease-in;
+    }
+    &:hover {
+      color: $primary;
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+//調整導覽列最外padding / 導覽列項目間距
+@media screen and (min-width: 800px) {
+  .lg-navbar {
+    padding: 0 2rem;
+    li{
+      margin-left: 3rem;
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .lg-navbar {
+    padding: 0 4rem;
+    li{
+      margin-left: 5rem;
+    }
+  }
+}
+
+
+

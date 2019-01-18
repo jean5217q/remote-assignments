@@ -1,0 +1,41 @@
+//section管理(banner以下到footer以上)
+// 總section外層容器
+.section-container {
+  padding: 0 16px;
+  @include flexy($just: center);
+}
+// 總section內層容器
+.section-inner {
+  width: 100%;
+  max-width: 1200px;
+  @include flexy($dir: column,$ais:center);
+  position: relative;
+}
+// 每個section區塊
+.section-block {
+  width: 100%;
+  @include flexy($dir:column,$ais:center);
+  position: relative; //按鈕定位需要
+}
+//顯示下方主題
+.show-area {
+  width: 100%;
+  display: none;
+  // display: block;
+  &.show {
+    display: block;
+  }
+}
+
+// 每個section區塊下距
+@media screen and (max-width: 499px) {
+  .section-block {
+    padding-bottom: 6.5rem; //91px
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .section-block {
+    padding-bottom: 7.5rem; //120px
+  }
+}
