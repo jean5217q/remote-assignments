@@ -7,8 +7,10 @@ function max(...num) {
   let x = num.sort((a,b)=>a-b)
   return x[x.length-1]
 }
-max(1, 2, 4, 5)  //5
-max(5, 2, 7, 1, 6)  //7
+console.log('result: '+max(1, 2, 4, 5))
+console.log('result: '+max(5, 2, 7, 1, 6))
+ 
+ 
 
 /*
 Assignment 2: Object
@@ -33,19 +35,21 @@ obj1.op = '+'
 obj1.n1 = 3
 obj1.n2 = 4
 calculate(obj1)
+
 //obj2
 let obj2 = {}
-obj2['op'] = '-'
-obj2['n1'] = 20
-obj2['n2'] = 10
+obj2['op'] = '+'
+obj2['n1'] = 3
+obj2['n2'] = 4
 calculate(obj2)
+
 //obj3
 function calcObj(op, n1, n2) {
   this.op = op
   this.n1 = n1
   this.n2 = n2
 }
-let obj3 = new calcObj('-', 100, 10)
+let obj3 = new calcObj('+', 3, 4)
 calculate(obj3)
 
 /*
@@ -58,7 +62,7 @@ function avg(data){
   const total = priceArray.reduce((total,price)=>total+price,0)
   return total / num
 }
-avg({
+let avgPrice = avg({
   size:3,
   products:[
     {
@@ -75,7 +79,9 @@ avg({
     }
   ]
 })
-// 350
+console.log('average price: '+avgPrice)
+
+
 
 
 
@@ -97,6 +103,6 @@ function twoSum(nums, target){
     }
   }
 }
-twoSum([2, 7, 11, 15],9) //[0,1]
+console.log('twoSum: '+twoSum([2, 7, 11, 15],9))
 twoSum([2, 7, 11, 15],26) //[2,3]
 
