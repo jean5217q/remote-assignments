@@ -3,14 +3,27 @@ Assignment 1: Function and Array
 find the  max number  of passing numbers
 */
 
+//ANS1
 function max(...num) {
   let x = num.sort((a,b)=>a-b)
   return x[x.length-1]
 }
 console.log('result: '+max(1, 2, 4, 5))
 console.log('result: '+max(5, 2, 7, 1, 6))
- 
- 
+
+//ANS2
+function max2(...num){
+  let max = num[0]
+  num.forEach(el=>{
+    if(max<el) {
+      max = el
+    }
+  })
+  return max
+}
+console.log('result: '+max2(1, 2, 4, 5))
+console.log('result: '+max2(5, 2, 7, 1, 6))
+
 
 /*
 Assignment 2: Object
