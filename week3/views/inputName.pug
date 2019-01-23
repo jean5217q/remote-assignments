@@ -1,0 +1,11 @@
+extends layout.pug
+block main
+  .inner
+    form(action="/trackName",method="post")
+      input(
+        type="text"
+        name="username"
+        placeholder="請輸入姓名")
+      span.warn 請輸入姓名
+      button(type="submit") 提交
+  script(src='/static/js/input.js')

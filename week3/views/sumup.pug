@@ -1,0 +1,16 @@
+extends layout.pug
+block main
+  .inner
+    .title 取得1+...N=?
+    .form-wrap
+      input(
+        type="text", 
+        name="number",
+        placeholder="請輸入正整數N")
+      span.warn 請輸入正整數
+      button
+        span 送
+        span 出
+      .box
+  script(src='/static/js/sumup.js')
+
