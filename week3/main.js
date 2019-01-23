@@ -32,7 +32,6 @@ app.get('/getData',(req,res)=>{
   }
 })
 
-
 //Assignment 3: Connect to RESTful API by AJAX
 //1+2+3...+10問題
 app.get('/sum.html',(req,res)=>{
@@ -42,9 +41,6 @@ app.get('/sum.html',(req,res)=>{
 app.get('/sumup',(req,res)=>{
   res.render('sumup')
 })
-
-
-
 
 //Assignment 4: HTTP Cookie
 app.get('/myName',(req,res)=>{
