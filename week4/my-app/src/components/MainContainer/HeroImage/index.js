@@ -35,13 +35,12 @@ class HeroImage extends Component {
         onClick={this.handleHeroImage}>
         <div 
           className="hero-image"
-          style={{
-            backgroundImage: `url('${mobile ? heroImg.smUrl : heroImg.lgUrl}')`,
-            opacity: `${change?'0': '1'}`}}>
+          style={{backgroundImage: `url('${mobile ? array[0].smUrl : array[0].lgUrl}')`}}>
         </div>
         <div 
           className="after-image"
-          style={{ backgroundImage: `url('${mobile ? heroImg.smUrl : heroImg.lgUrl}')`}}>
+          style={{ backgroundImage: `url('${mobile ? array[1].smUrl : array[1].lgUrl}')`,
+          opacity: `${change?'1': '0'}`}}>
         </div>
         <div className="hero-image-title">
           <div className="sub">

@@ -254,9 +254,9 @@ nav .header-logo {
   left: 0;
   background-size: cover;
   background-position: center center;
+  cursor: pointer;
   -webkit-transition: 0.2s ease-in;
   transition: 0.2s ease-in;
-  cursor: pointer;
 }
 
 .hero-image-title {
