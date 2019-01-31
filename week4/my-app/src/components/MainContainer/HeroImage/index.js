@@ -8,14 +8,14 @@ class HeroImage extends Component {
       {
         span: ['Let\'s','visit','in'],
         desc: '說走就走！來場完美的京都の旅',
-        lgUrl: require('../../../img/homepage/hero_img/lg/lg-hero-01.jpg'),
-        smUrl: require('../../../img/homepage/hero_img/sm/sm-hero-01.jpg')
+        lgUrl: require('../../../img/homepage/hero_img/lg/01.jpg'),
+        smUrl: require('../../../img/homepage/hero_img/sm/01.jpg')
       },
       {
         span: ['Things','to','do','in'],
         desc: '玩轉京都，在地人推薦的十大玩法',
-        lgUrl: require('../../../img/homepage/hero_img/lg/lg-hero-02.jpg'),
-        smUrl: require('../../../img/homepage/hero_img/sm/sm-hero-02.jpg')
+        lgUrl: require('../../../img/homepage/hero_img/lg/02.jpg'),
+        smUrl: require('../../../img/homepage/hero_img/sm/02.jpg')
       }
     ]
   }
@@ -24,25 +24,25 @@ class HeroImage extends Component {
       change: !this.state.change
     })
   }
-  componentDidUpdate(){
-    let arr = this.state.data
-    if(this.props.mobile) {
-      document.documentElement.style.setProperty('--first', `url('${arr[0].smUrl}')`)
-      document.documentElement.style.setProperty('--second', `url('${arr[1].smUrl}')`)
-    }
-    else {
-      document.documentElement.style.setProperty('--first', `url('${arr[0].lgUrl}')`)
-      document.documentElement.style.setProperty('--second', `url('${arr[1].lgUrl}')`)
-    }
-  }
   render(){
-    let arr = this.state.data
-    let heroImg = this.state.change?arr[1]:arr[0]
+    let mobile = this.props.mobile
+    let change = this.state.change
+    let array = this.state.data
+    let heroImg = this.state.change ? array[1]:array[0]
     return (
       <div 
         className="top-hero" 
         onClick={this.handleHeroImage}>
-        <div className={`top-hero-image ${this.state.change?'changeBgi': 'null'}`}></div>
+        <div 
+          className="hero-image"
+          style={{
+            backgroundImage: `url('${mobile ? heroImg.smUrl : heroImg.lgUrl}')`,
+            opacity: `${change?'0': '1'}`}}>
+        </div>
+        <div 
+          className="after-image"
+          style={{ backgroundImage: `url('${mobile ? heroImg.smUrl : heroImg.lgUrl}')`}}>
+        </div>
         <div className="hero-image-title">
           <div className="sub">
             {heroImg.span.map((text,index)=><span key={index}>{text}</span>)}

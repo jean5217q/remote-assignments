@@ -238,28 +238,25 @@ nav .header-logo {
   margin-bottom: 7.5rem;
 }
 
-.top-hero .top-hero-image {
-  background-size: cover;
-  background-position: center center;
-  cursor: pointer;
-  position: relative;
-}
-
-.top-hero .top-hero-image::after {
-  display: block;
-  content: '';
+.top-hero .hero-image {
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center center;
-  opacity: 0;
-  -webkit-transition: 0.2s ease-in;
-  transition: 0.2s ease-in;
   cursor: pointer;
 }
 
-.top-hero .top-hero-image.changeBgi::after {
-  opacity: 1;
+.top-hero .after-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+  cursor: pointer;
 }
 
 .hero-image-title {
@@ -322,21 +319,9 @@ nav .header-logo {
   font-weight: normal;
 }
 
-:root {
-  --first: '' ;
-  --second: '';
-}
-
 @media screen and (max-width: 499px) {
-  .top-hero-image {
+  .top-hero {
     height: 300px;
-    background: var(--first);
-    /* background-image: url("img/homepage/hero_img/sm/sm-hero-01.jpg"); */
-  }
-  .top-hero-image::after {
-    background: var(--second);
-    /* background-image: url("img/homepage/hero_img/sm/sm-hero-02.jpg"); */
-
   }
   .hero-image-title {
     font-size: 24px;
@@ -344,14 +329,8 @@ nav .header-logo {
 }
 
 @media screen and (min-width: 500px) {
-  .top-hero-image {
+  .top-hero {
     height: 360px;
-    background-image: var(--first);
-    /* background-image: url("img/homepage/hero_img/lg/lg-hero-01.jpg"); */
-  }
-  .top-hero-image:after {
-    background: var(--second);
-    /* background-image: url("img/homepage/hero_img/lg/lg-hero-02.jpg"); */
   }
   .hero-image-title {
     font-size: 32px;
@@ -359,7 +338,7 @@ nav .header-logo {
 }
 
 @media screen and (min-width: 800px) {
-  .top-hero-image {
+  .top-hero {
     height: 440px;
   }
   .hero-image-title {
@@ -368,7 +347,7 @@ nav .header-logo {
 }
 
 @media screen and (min-width: 1200px) {
-  .top-hero-image {
+  .top-hero {
     height: 560px;
   }
   .hero-image-title {
@@ -437,66 +416,6 @@ nav .header-logo {
     padding-bottom: 7.5rem;
   }
 }
-
-/* @media screen and (max-width: 499px) {
-  .experience:nth-child(01) {
-    background-image: url("img/homepage/experience/sm/01.jpg");
-  }
-  .experience:nth-child(02) {
-    background-image: url("img/homepage/experience/sm/02.jpg");
-  }
-  .experience:nth-child(03) {
-    background-image: url("img/homepage/experience/sm/03.jpg");
-  }
-  .experience:nth-child(04) {
-    background-image: url("img/homepage/experience/sm/04.jpg");
-  }
-}
-
-@media screen and (min-width: 500px) {
-  .experience:nth-child(01) {
-    background-image: url("img/homepage/experience/lg/01.jpg");
-  }
-  .experience:nth-child(02) {
-    background-image: url("img/homepage/experience/lg/02.jpg");
-  }
-  .experience:nth-child(03) {
-    background-image: url("img/homepage/experience/lg/03.jpg");
-  }
-  .experience:nth-child(04) {
-    background-image: url("img/homepage/experience/lg/04.jpg");
-  }
-} */
-
-/* @media screen and (max-width: 499px) {
-  .season:nth-child(01) {
-    background-image: url("img/homepage/season/sm/01.jpg");
-  }
-  .season:nth-child(02) {
-    background-image: url("img/homepage/season/sm/02.jpg");
-  }
-  .season:nth-child(03) {
-    background-image: url("img/homepage/season/sm/03.jpg");
-  }
-  .season:nth-child(04) {
-    background-image: url("img/homepage/season/sm/04.jpg");
-  }
-}
-
-@media screen and (min-width: 500px) {
-  .season:nth-child(01) {
-    background-image: url("img/homepage/season/lg/01.jpg");
-  }
-  .season:nth-child(02) {
-    background-image: url("img/homepage/season/lg/02.jpg");
-  }
-  .season:nth-child(03) {
-    background-image: url("img/homepage/season/lg/03.jpg");
-  }
-  .season:nth-child(04) {
-    background-image: url("img/homepage/season/lg/04.jpg");
-  }
-} */
 
 .photo-area {
   width: 100%;

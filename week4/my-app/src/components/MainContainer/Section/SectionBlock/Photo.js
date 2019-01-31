@@ -9,8 +9,6 @@ const Photo = ({array,mobile}) => {
         className="section-item experience" 
         key={index}
         style={{backgroundImage:`url('${mobile ? el.lgUrl : el.smUrl}')`}}>
-        {/* style={{color:`${a?'red':'orange'}`}}
-          style={{ backgroundImage : `url('${el.lgUrl}')`}} */}
         <div className="img-title"> 
           <span>{el.title}</span>
         </div>
